@@ -1,0 +1,3667 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102b4e">
+<meta name="description" content="وصال؛ خانه هنر و اصالت ایرانی. دست‌بافته‌ها و صنایع‌دستی روستای رویین، اسفراین، خراسان شمالی.">
+<title>وصال | خانه هنر و اصالت ایرانی</title>
+
+<style>
+/* ==========================================================
+   VESAL HANDICRAFTS — SINGLE FILE EDITION
+   HTML + CSS + JavaScript
+   طراحی واکنش‌گرا برای اندروید، آیفون و دسکتاپ
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --blue: #102b4e;
+  --blue-deep: #091a30;
+  --blue-light: #214d73;
+  --turquoise: #168783;
+  --turquoise-light: #a8ded3;
+  --lacquer: #9e3039;
+  --lacquer-dark: #70202b;
+  --saffron: #d69a35;
+  --gold-light: #f1d49a;
+  --cream: #f8f0df;
+  --paper: #fffaf0;
+  --ink: #223143;
+  --muted: #687584;
+  --line: rgba(16, 43, 78, .15);
+  --white: #ffffff;
+  --shadow: 0 16px 45px rgba(16, 43, 78, .11);
+  --radius: 22px;
+  --font: "Vazirmatn", Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(22,135,131,.06), transparent 35%),
+    var(--paper);
+  line-height: 1.9;
+  min-height: 100vh;
+}
+
+body, button, input, select, textarea {
+  font-family: var(--font);
+}
+
+button, input, select, textarea {
+  font-size: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--turquoise);
+  outline-offset: 3px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.container {
+  width: min(1180px, calc(100% - 34px));
+  margin-inline: auto;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.gold {
+  color: var(--saffron);
+}
+
+.turquoise {
+  color: var(--turquoise);
+}
+
+.section {
+  padding-block: 58px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  color: var(--blue);
+  font-size: clamp(25px, 4vw, 37px);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.section-subtitle {
+  margin: 0;
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 27px;
+}
+
+.title-decoration {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+  color: var(--lacquer);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+.title-decoration::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--saffron);
+}
+
+/* ---- دکمه‌ها؛ همیشه خارج از عکس‌های اصلی ---- */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 11px 21px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-light);
+  box-shadow: 0 8px 22px rgba(16,43,78,.16);
+}
+
+.btn-gold {
+  background: var(--saffron);
+  border-color: var(--saffron);
+  color: #25190a;
+}
+
+.btn-gold:hover {
+  background: #e4b75e;
+}
+
+.btn-turquoise {
+  background: var(--turquoise);
+}
+
+.btn-outline {
+  color: var(--blue);
+  background: transparent;
+  border-color: rgba(16,43,78,.28);
+}
+
+.btn-outline:hover {
+  color: var(--white);
+}
+
+.btn-light {
+  background: var(--paper);
+  color: var(--blue);
+  border-color: var(--line);
+}
+
+.btn-small {
+  min-height: 39px;
+  padding: 8px 13px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+/* ---- نوار بالایی ---- */
+
+.topbar {
+  color: #f8f0df;
+  background: var(--blue-deep);
+  border-bottom: 2px solid var(--saffron);
+  font-size: 11px;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  gap: 12px;
+}
+
+.topbar-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--saffron);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #d69a3520;
+}
+
+/* ---- سربرگ ---- */
+
+.site-header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  background: rgba(255,250,240,.96);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 3px 19px rgba(16,43,78,.045);
+}
+
+.header-inner {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+.brand-emblem {
+  width: 51px;
+  height: 51px;
+  border-radius: 50% 50% 8px 50%;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--saffron);
+  color: var(--lacquer);
+  font-size: 27px;
+  line-height: 1;
+  background:
+    repeating-conic-gradient(from 0deg, transparent 0deg 14deg, #d69a3518 14deg 16deg),
+    #fff8e9;
+  box-shadow: inset 0 0 0 4px #d69a3520;
+  transform: rotate(-4deg);
+}
+
+.brand-name {
+  margin: 0;
+  color: var(--blue);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.brand-subtitle {
+  display: block;
+  color: var(--lacquer);
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav-button {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.nav-button:hover,
+.nav-button[aria-current="page"] {
+  color: var(--lacquer);
+  background: #9e30390e;
+}
+
+.nav-button[aria-current="page"] {
+  box-shadow: inset 0 -2px var(--lacquer);
+}
+
+.header-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 43px;
+  padding: 9px 13px;
+  color: var(--white);
+  background: var(--lacquer);
+  border: 0;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cart-count {
+  min-width: 22px;
+  min-height: 22px;
+  padding-inline: 5px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50px;
+  background: var(--gold-light);
+  color: var(--blue);
+  font-size: 11px;
+}
+
+.menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--blue);
+  background: transparent;
+}
+
+/* ---- صفحه خانه: معرفی و اسلایدر عکس ---- */
+
+.home-intro {
+  padding-top: 34px;
+}
+
+.heritage-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #d69a3555;
+  background: #f6e8c9;
+  color: #704716;
+  border-radius: 99px;
+  padding: 6px 13px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.heritage-label::before {
+  content: "✦";
+  color: var(--lacquer);
+  font-size: 15px;
+}
+
+.home-title {
+  margin: 19px 0 12px;
+  font-size: clamp(34px, 5.2vw, 61px);
+  font-weight: 800;
+  line-height: 1.42;
+  color: var(--blue);
+  letter-spacing: -.8px;
+}
+
+.home-title span {
+  color: var(--lacquer);
+  position: relative;
+  display: inline-block;
+}
+
+.home-description {
+  color: #566575;
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 2.2;
+}
+
+.intro-actions {
+  display: flex;
+  gap: 11px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+/* عکس‌های اسلایدر، جدا از متن و دکمه‌ها */
+
+.carousel-shell {
+  margin-top: 32px;
+  padding: 10px;
+  border: 1px solid #d69a3560;
+  border-radius: 23px;
+  background: #fffdf7;
+  box-shadow: var(--shadow);
+}
+
+.carousel-visual {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  height: clamp(220px, 41vw, 470px);
+  background: #e5dac5;
+  border-radius: 16px;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .85s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.025);
+  transition: transform 5s ease;
+}
+
+.carousel-slide.active img {
+  transform: scale(1);
+}
+
+.carousel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 7px 3px;
+}
+
+.carousel-caption {
+  display: grid;
+  gap: 3px;
+}
+
+.carousel-caption strong {
+  color: var(--blue);
+  font-size: 13px;
+}
+
+.carousel-caption span {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  padding: 0;
+  background: #c8c9c8;
+  border-radius: 99px;
+  transition: .25s;
+}
+
+.carousel-dot.active {
+  background: var(--lacquer);
+  width: 24px;
+}
+
+.carousel-arrow {
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--line);
+  color: var(--blue);
+  border-radius: 10px;
+  background: #fffaf0;
+}
+
+/* ---- نشان‌های معرفی ---- */
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 29px;
+}
+
+.trust-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 88px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: #fffdf8;
+  transition: .25s;
+}
+
+.trust-card:hover {
+  transform: translateY(-3px);
+  border-color: #d69a3580;
+}
+
+.trust-icon {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: var(--lacquer);
+  border: 1px solid #9e303930;
+  border-radius: 12px;
+  background: #9e30390b;
+  font-size: 22px;
+}
+
+.trust-card strong {
+  display: block;
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.trust-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* ---- طرح و نقش تزیینی ---- */
+
+.pattern-divider {
+  height: 13px;
+  margin-block: 25px 0;
+  background-color: var(--blue);
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 8px, #d69a35 8px 10px, transparent 10px 17px),
+    repeating-linear-gradient(-45deg, transparent 0 8px, #168783 8px 10px, transparent 10px 17px);
+  background-size: 26px 13px;
+  border-top: 2px solid var(--saffron);
+  border-bottom: 2px solid var(--lacquer);
+}
+
+/* ---- خانه: کارت‌های منتخب ---- */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.featured-card {
+  position: relative;
+  min-height: 245px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 23px;
+  border: 1px solid #d69a3555;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 20% 15%, #ffffff22, transparent 40%),
+    var(--blue);
+  color: white;
+  isolation: isolate;
+}
+
+.featured-card:nth-child(2) {
+  background-color: var(--lacquer);
+}
+
+.featured-card:nth-child(3) {
+  background-color: var(--turquoise);
+}
+
+.featured-card:nth-child(4) {
+  background-color: #67502b;
+}
+
+.featured-card::before,
+.featured-card::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  opacity: .18;
+}
+
+.featured-card::before {
+  inset: 10px;
+  border: 1px solid var(--gold-light);
+  border-radius: 12px;
+}
+
+.featured-card::after {
+  width: 210px;
+  height: 210px;
+  border: 2px solid var(--gold-light);
+  border-radius: 50%;
+  top: -96px;
+  left: -65px;
+  box-shadow:
+    0 0 0 14px transparent,
+    0 0 0 16px #f1d49a;
+  transform: rotate(45deg);
+}
+
+.featured-card .symbol {
+  font-size: 37px;
+  line-height: 1.2;
+  color: var(--gold-light);
+  margin-bottom: 19px;
+}
+
+.featured-card h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.featured-card p {
+  font-size: 12px;
+  color: #ffffffd9;
+  margin: 0;
+}
+
+.featured-card .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+/* ---- معرفی رویین و صاحبان ---- */
+
+.story-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 27px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 23px;
+  background: #fffdf7;
+  box-shadow: var(--shadow);
+}
+
+.story-copy {
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.story-copy h2 {
+  margin: 0 0 13px;
+  color: var(--blue);
+  font-size: clamp(23px, 3vw, 32px);
+  line-height: 1.6;
+}
+
+.story-copy p {
+  color: #586778;
+  font-size: 13px;
+  line-height: 2.3;
+  margin: 0 0 13px;
+}
+
+.story-art {
+  position: relative;
+  min-height: 360px;
+  background: #e5d8bd;
+  overflow: hidden;
+}
+
+.story-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.story-art-label {
+  position: absolute;
+  right: 16px;
+  left: 16px;
+  bottom: 16px;
+  padding: 14px 17px;
+  color: white;
+  background: rgba(9,26,48,.86);
+  border-right: 3px solid var(--saffron);
+  border-radius: 10px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* ---- نشان افتخار ---- */
+
+.honour-section {
+  margin-top: 27px;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid #d69a3590;
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse at 5% 0%, #d69a3518, transparent 50%),
+    linear-gradient(120deg, #fff7e5, #fffdf8 70%);
+}
+
+.honour-medal {
+  width: 115px;
+  height: 115px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff8e0 45%, #d69a35 46% 51%, #8b5c21 52% 56%, #f0d49a 57%);
+  color: var(--lacquer);
+}
+
+.honour-medal::before {
+  content: "✦";
+  font-size: 53px;
+  line-height: 1;
+}
+
+.honour-medal::after {
+  content: "وصال";
+  position: absolute;
+  bottom: 16px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.honour-copy h3 {
+  color: var(--blue);
+  font-size: 19px;
+  margin: 0 0 6px;
+}
+
+.honour-copy p {
+  color: #5d6672;
+  font-size: 12px;
+  line-height: 2.2;
+  margin: 0 0 12px;
+}
+
+.honour-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #6c4c17;
+  background: #d69a351c;
+  padding: 6px 11px;
+  border-radius: 8px;
+}
+
+/* ---- صفحه فروشگاه ---- */
+
+.shop-banner {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(27px, 5vw, 53px);
+  color: white;
+  border-radius: 23px;
+  background:
+    radial-gradient(circle at 5% 25%, #d69a3533, transparent 35%),
+    linear-gradient(120deg, var(--blue-deep), var(--blue) 65%, #245a69);
+  border: 1px solid #d69a3570;
+}
+
+.shop-banner::after {
+  position: absolute;
+  content: "✺";
+  color: #f1d49a1b;
+  font-size: 240px;
+  left: 8px;
+  top: -90px;
+  pointer-events: none;
+}
+
+.shop-banner h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 6px;
+  font-size: clamp(27px, 4vw, 42px);
+  color: var(--gold-light);
+}
+
+.shop-banner p {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  color: #e4e9ef;
+  font-size: 13px;
+  margin: 0;
+  line-height: 2.2;
+}
+
+.shop-toolbar {
+  margin-block: 25px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.search-box {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 15px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: white;
+  color: var(--muted);
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  color: var(--ink);
+  background: transparent;
+  font-size: 13px;
+}
+
+.sort-select {
+  min-height: 48px;
+  padding: 8px 13px;
+  color: var(--blue);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  outline: none;
+  font-size: 12px;
+  max-width: 190px;
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 23px;
+}
+
+.filter-button {
+  border: 1px solid var(--line);
+  background: white;
+  color: #536273;
+  border-radius: 999px;
+  padding: 8px 15px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  color: white;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.product-count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  min-width: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: #d69a3590;
+  box-shadow: var(--shadow);
+}
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #eee4d0;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.045);
+}
+
+.product-tag {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  color: #fff;
+  background: var(--lacquer);
+  border: 1px solid #ffffff55;
+  border-radius: 7px;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.product-content {
+  padding: 14px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.product-category {
+  color: var(--turquoise);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.product-title {
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 800;
+  margin: 4px 0 5px;
+  line-height: 1.8;
+}
+
+.product-description {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+  margin: 0;
+  flex: 1;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-block: 13px 11px;
+  padding-top: 11px;
+  border-top: 1px dashed var(--line);
+}
+
+.product-price {
+  color: var(--lacquer);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.product-price small {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 9px;
+}
+
+.product-add {
+  width: 100%;
+  min-height: 43px;
+  background: #edf5f2;
+  border: 1px solid #16878335;
+  color: #116965;
+  border-radius: 11px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.product-add:hover {
+  color: white;
+  background: var(--turquoise);
+}
+
+.empty-products {
+  grid-column: 1 / -1;
+  padding: 35px;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* ---- صفحه تماس ---- */
+
+.contact-banner {
+  padding: clamp(26px, 5vw, 49px);
+  background:
+    radial-gradient(circle at 95% 0%, #d69a3530, transparent 33%),
+    var(--blue);
+  border-radius: 22px;
+  color: white;
+  border: 1px solid #d69a3566;
+}
+
+.contact-banner h1 {
+  margin: 0 0 8px;
+  color: var(--gold-light);
+  font-size: clamp(29px, 4vw, 43px);
+}
+
+.contact-banner p {
+  margin: 0;
+  max-width: 650px;
+  font-size: 13px;
+  color: #e2e9ef;
+  line-height: 2.2;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  gap: 21px;
+  margin-top: 23px;
+  align-items: start;
+}
+
+.contact-panel {
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+}
+
+.contact-panel h2 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  color: var(--blue);
+}
+
+.contact-panel > p {
+  margin: 0 0 19px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 11px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  transition: .2s;
+}
+
+.contact-item:hover {
+  border-color: #16878380;
+  background: #16878305;
+}
+
+.contact-icon {
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--turquoise);
+  background: #16878312;
+  font-size: 21px;
+}
+
+.contact-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.contact-info strong {
+  display: block;
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.contact-info span {
+  display: block;
+  direction: ltr;
+  text-align: right;
+  color: var(--muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.contact-action {
+  flex-shrink: 0;
+  color: var(--lacquer);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.social-card {
+  min-height: 105px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffdf8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .2s;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--saffron);
+}
+
+.social-card .social-symbol {
+  font-size: 21px;
+  color: var(--lacquer);
+}
+
+.social-card strong {
+  color: var(--blue);
+  font-size: 12px;
+}
+
+.social-card small {
+  color: var(--muted);
+  font-size: 10px;
+  direction: ltr;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.location-note {
+  margin-top: 15px;
+  padding: 17px;
+  border-radius: 14px;
+  background: #f4eddd;
+  color: #485768;
+  font-size: 12px;
+}
+
+.location-note strong {
+  color: var(--blue);
+}
+
+.contact-bottom {
+  margin-top: 23px;
+  padding: 24px;
+  border-radius: 17px;
+  color: white;
+  background: var(--lacquer-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-bottom h3 {
+  margin: 0;
+  color: var(--gold-light);
+}
+
+.contact-bottom p {
+  font-size: 12px;
+  margin: 5px 0 0;
+  color: #f6e5e4;
+}
+
+/* ---- فوتر سنتی، متحرک و چشم‌گیر ---- */
+
+.site-footer {
+  position: relative;
+  margin-top: 45px;
+  overflow: hidden;
+  background: var(--blue-deep);
+  color: #dbe3eb;
+}
+
+.footer-pattern {
+  height: 16px;
+  overflow: hidden;
+  border-top: 3px solid var(--saffron);
+  border-bottom: 3px solid var(--lacquer);
+  background-color: #0c213b;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0 9px, #d69a35 9px 11px, transparent 11px 18px),
+    repeating-linear-gradient(-45deg, transparent 0 9px, #168783 9px 11px, transparent 11px 18px);
+  background-size: 32px 16px;
+  animation: weaveMove 18s linear infinite;
+}
+
+@keyframes weaveMove {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 160px 0, -160px 0; }
+}
+
+.footer-main {
+  padding-block: 38px 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 33px;
+}
+
+.footer-brand .brand-name {
+  color: var(--gold-light);
+}
+
+.footer-brand .brand-subtitle {
+  color: #c9ddd8;
+}
+
+.footer-brand .brand-emblem {
+  background: #fff9e8;
+}
+
+.footer-about {
+  margin: 15px 0 0;
+  max-width: 390px;
+  color: #b9c7d6;
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+.footer-column h3 {
+  color: var(--gold-light);
+  font-size: 14px;
+  margin: 0 0 14px;
+}
+
+.footer-link {
+  display: block;
+  width: fit-content;
+  color: #c4d0dc;
+  font-size: 12px;
+  padding-block: 4px;
+}
+
+.footer-link:hover {
+  color: var(--gold-light);
+}
+
+.footer-contact-line {
+  display: block;
+  direction: ltr;
+  text-align: right;
+  color: #c4d0dc;
+  padding-block: 5px;
+  font-size: 12px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-block: 15px;
+  border-top: 1px solid #ffffff1b;
+  color: #a9b8c8;
+  font-size: 10px;
+}
+
+/* ---- سبد خرید ---- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4,13,25,.55);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .22s;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(460px, 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--paper);
+  border-left: 3px solid var(--saffron);
+  transform: translateX(105%);
+  transition: transform .28s ease;
+  box-shadow: -10px 0 45px #0002;
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-header h2 {
+  color: var(--blue);
+  margin: 0;
+  font-size: 20px;
+}
+
+.close-button {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.cart-items {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-block: 12px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 69px minmax(0,1fr) auto;
+  gap: 11px;
+  align-items: center;
+  padding-block: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-item img {
+  display: block;
+  width: 69px;
+  height: 69px;
+  object-fit: cover;
+  border-radius: 11px;
+  background: #e5d8bd;
+}
+
+.cart-item-name {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.cart-item-price {
+  color: var(--lacquer);
+  font-size: 11px;
+}
+
+.qty-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.qty-controls button {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--blue);
+}
+
+.qty-controls span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.remove-item {
+  border: 0;
+  background: transparent;
+  color: var(--lacquer);
+  font-size: 11px;
+}
+
+.cart-summary {
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+.total-line strong {
+  color: var(--lacquer);
+}
+
+.cart-summary .btn {
+  width: 100%;
+}
+
+.cart-note {
+  font-size: 10px;
+  text-align: center;
+  color: var(--muted);
+  margin: 9px 0 0;
+}
+
+/* ---- فرم سفارش ---- */
+
+.modal {
+  position: fixed;
+  z-index: 130;
+  inset: 0;
+  padding: 17px;
+  display: none;
+  place-items: center;
+  overflow-y: auto;
+  background: rgba(4,13,25,.68);
+}
+
+.modal.show {
+  display: grid;
+}
+
+.modal-card {
+  width: min(530px, 100%);
+  max-height: calc(100dvh - 34px);
+  overflow-y: auto;
+  padding: 23px;
+  background: var(--paper);
+  border: 1px solid #d69a3590;
+  border-radius: 21px;
+  box-shadow: var(--shadow);
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-heading h2 {
+  color: var(--blue);
+  font-size: 21px;
+  margin: 0;
+}
+
+.modal-card > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.form-group {
+  display: grid;
+  gap: 6px;
+  margin-block: 13px;
+}
+
+.form-group label {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  min-height: 47px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 10px 13px;
+  color: var(--ink);
+  background: white;
+  outline: none;
+  font-size: 13px;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--turquoise);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+.toast {
+  position: fixed;
+  z-index: 150;
+  left: 50%;
+  bottom: calc(22px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 15px);
+  opacity: 0;
+  pointer-events: none;
+  max-width: calc(100% - 30px);
+  padding: 11px 18px;
+  border: 1px solid #d69a3590;
+  border-radius: 12px;
+  background: var(--blue-deep);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  transition: .25s;
+  box-shadow: var(--shadow);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- موبایل و تبلت ---- */
+
+@media (max-width: 950px) {
+  .main-nav {
+    gap: 1px;
+  }
+
+  .nav-button {
+    padding-inline: 10px;
+    font-size: 12px;
+  }
+
+  .header-inner {
+    gap: 10px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .trust-strip {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .story-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    scroll-padding-top: 82px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .section {
+    padding-block: 37px;
+  }
+
+  .topbar-inner {
+    min-height: 33px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topbar-location {
+    display: none;
+  }
+
+  .header-inner {
+    min-height: 70px;
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-emblem {
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+  }
+
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .menu-button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .header-cart-text {
+    display: none;
+  }
+
+  .cart-button {
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+    gap: 3px;
+  }
+
+  .cart-count {
+    min-width: 19px;
+    min-height: 19px;
+    font-size: 10px;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    padding: 9px 12px 14px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 25px #102b4e12;
+  }
+
+  .main-nav.open {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .nav-button {
+    width: 100%;
+    min-height: 45px;
+    text-align: right;
+    font-size: 13px;
+  }
+
+  .home-intro {
+    padding-top: 25px;
+  }
+
+  .home-title {
+    font-size: clamp(34px, 9vw, 47px);
+    margin-top: 15px;
+    letter-spacing: -.4px;
+  }
+
+  .home-description {
+    font-size: 13px;
+  }
+
+  .intro-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 19px;
+  }
+
+  .intro-actions .btn {
+    min-height: 47px;
+    padding-inline: 10px;
+    font-size: 12px;
+  }
+
+  .carousel-shell {
+    margin-top: 24px;
+    padding: 7px;
+    border-radius: 17px;
+  }
+
+  .carousel-visual {
+    height: 250px;
+    height: clamp(205px, 64vw, 310px);
+    border-radius: 12px;
+  }
+
+  .carousel-footer {
+    align-items: center;
+    gap: 7px;
+    padding: 11px 4px 3px;
+  }
+
+  .carousel-caption strong {
+    font-size: 11px;
+  }
+
+  .carousel-caption span {
+    font-size: 9px;
+  }
+
+  .carousel-controls {
+    gap: 6px;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .trust-strip {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .trust-card {
+    min-height: 76px;
+    padding: 10px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+
+  .trust-icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .trust-card strong {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .trust-card small {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+
+  .section-heading {
+    align-items: start;
+    margin-bottom: 19px;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-subtitle {
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .featured-grid {
+    gap: 9px;
+  }
+
+  .featured-card {
+    min-height: 195px;
+    padding: 17px;
+    border-radius: 15px;
+  }
+
+  .featured-card .symbol {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  .featured-card h3 {
+    font-size: 14px;
+  }
+
+  .featured-card p {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+
+  .featured-card .text-link {
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  .story-panel {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .story-art {
+    grid-row: 1;
+    min-height: 235px;
+  }
+
+  .story-art img {
+    min-height: 235px;
+    max-height: 300px;
+  }
+
+  .story-art-label {
+    font-size: 11px;
+    padding: 11px;
+  }
+
+  .story-copy {
+    padding: 21px;
+  }
+
+  .story-copy h2 {
+    font-size: 24px;
+  }
+
+  .story-copy p {
+    font-size: 12px;
+  }
+
+  .honour-section {
+    grid-template-columns: 76px 1fr;
+    gap: 13px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .honour-medal {
+    width: 76px;
+    height: 76px;
+  }
+
+  .honour-medal::before {
+    font-size: 34px;
+  }
+
+  .honour-medal::after {
+    font-size: 9px;
+    bottom: 8px;
+  }
+
+  .honour-copy h3 {
+    font-size: 15px;
+  }
+
+  .honour-copy p {
+    font-size: 10px;
+    line-height: 2;
+  }
+
+  .honour-date {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+
+  .shop-banner {
+    padding: 23px;
+    border-radius: 17px;
+  }
+
+  .shop-banner h1 {
+    font-size: 28px;
+  }
+
+  .shop-banner p {
+    font-size: 12px;
+  }
+
+  .shop-toolbar {
+    grid-template-columns: 1fr;
+    margin-block: 19px 14px;
+    gap: 9px;
+  }
+
+  .search-box {
+    min-height: 46px;
+  }
+
+  .sort-select {
+    width: 100%;
+    max-width: none;
+    min-height: 45px;
+  }
+
+  .category-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    margin-inline: -1px;
+    scrollbar-width: thin;
+  }
+
+  .filter-button {
+    flex-shrink: 0;
+    padding: 8px 13px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+  }
+
+  .product-card {
+    border-radius: 13px;
+  }
+
+  .product-content {
+    padding: 10px;
+  }
+
+  .product-category {
+    font-size: 9px;
+  }
+
+  .product-title {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .product-description {
+    font-size: 10px;
+    line-height: 1.9;
+  }
+
+  .product-meta {
+    margin-block: 9px 8px;
+    padding-top: 8px;
+    align-items: start;
+  }
+
+  .product-price {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .product-price small {
+    font-size: 9px;
+  }
+
+  .product-add {
+    min-height: 42px;
+    font-size: 10px;
+    padding-inline: 4px;
+  }
+
+  .contact-banner {
+    padding: 24px;
+    border-radius: 17px;
+  }
+
+  .contact-banner h1 {
+    font-size: 30px;
+  }
+
+  .contact-banner p {
+    font-size: 12px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .contact-panel {
+    padding: 17px;
+    border-radius: 15px;
+  }
+
+  .contact-panel h2 {
+    font-size: 17px;
+  }
+
+  .contact-item {
+    gap: 10px;
+    padding: 11px;
+  }
+
+  .contact-icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .contact-info strong {
+    font-size: 11px;
+  }
+
+  .contact-info span {
+    font-size: 10px;
+  }
+
+  .contact-action {
+    font-size: 10px;
+  }
+
+  .social-grid {
+    gap: 8px;
+  }
+
+  .social-card {
+    min-height: 94px;
+    padding: 12px;
+  }
+
+  .contact-bottom {
+    padding: 18px;
+    gap: 13px;
+  }
+
+  .contact-bottom h3 {
+    font-size: 16px;
+  }
+
+  .contact-bottom p {
+    font-size: 11px;
+  }
+
+  .footer-main {
+    padding-block: 27px 19px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 23px 15px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-column h3 {
+    font-size: 12px;
+  }
+
+  .footer-about,
+  .footer-link,
+  .footer-contact-line {
+    font-size: 10px;
+  }
+
+  .footer-bottom {
+    display: grid;
+    gap: 5px;
+    font-size: 9px;
+  }
+
+  .cart-drawer {
+    width: 100%;
+    padding: 15px;
+    padding-bottom: calc(15px + env(safe-area-inset-bottom));
+    border-left: 0;
+    border-top: 3px solid var(--saffron);
+    transform: translateY(105%);
+  }
+
+  .cart-drawer.open {
+    transform: translateY(0);
+  }
+
+  .cart-header h2 {
+    font-size: 19px;
+  }
+
+  .modal {
+    padding: 9px;
+    padding-bottom: calc(9px + env(safe-area-inset-bottom));
+  }
+
+  .modal-card {
+    padding: 17px;
+    max-height: calc(100dvh - 18px);
+    border-radius: 17px;
+  }
+
+  .modal-heading h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    width: calc(100% - 18px);
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .brand-emblem {
+    width: 38px;
+    height: 38px;
+  }
+
+  .featured-card {
+    padding: 13px;
+  }
+
+  .honour-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .honour-date {
+    justify-content: center;
+  }
+
+  .product-content {
+    padding: 8px;
+  }
+
+  .product-title {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ====================== نوار بالایی ====================== -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-note">
+      <span class="topbar-dot"></span>
+      <span>هنر دست ایرانی؛ از رویین، با مهر وصال</span>
+    </div>
+    <div class="topbar-location">روستای رویین · شهرستان اسفراین · خراسان شمالی</div>
+  </div>
+</div>
+
+<!-- ====================== سربرگ ====================== -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="brand" href="#home" aria-label="صفحه خانه وصال" data-page="home">
+      <span class="brand-emblem" aria-hidden="true">✿</span>
+      <span>
+        <span class="brand-name">وصال</span>
+        <span class="brand-subtitle">خانه‌ی هنر و اصالت ایرانی</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="ناوبری اصلی">
+      <button class="nav-button" data-page="home" aria-current="page">خانه</button>
+      <button class="nav-button" data-page="shop">فروشگاه</button>
+      <button class="nav-button" data-page="contact">ارتباط با ما</button>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-button" type="button" onclick="openCart()" aria-label="باز کردن سبد خرید">
+        <span aria-hidden="true">🛍</span>
+        <span class="header-cart-text">سبد خرید</span>
+        <span class="cart-count" id="cartCount">۰</span>
+      </button>
+
+      <button class="menu-button" type="button" onclick="toggleMenu()"
+              aria-label="باز کردن منو" aria-expanded="false" id="menuButton">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ==========================================================
+     صفحه اول: خانه
+     ========================================================== -->
+<section class="page-view" id="page-home">
+
+  <div class="container home-intro">
+
+    <span class="heritage-label">از دل فرهنگ ایران، برای خانه‌های امروز</span>
+
+    <h1 class="home-title">
+      هر تار و پود،
+      <br>
+      <span>روایتی از اصالت</span>
+    </h1>
+
+    <p class="home-description">
+      به وصال خوش آمدید؛ جایی برای دیدار هنر دست هنرمندان ایرانی،
+      دست‌بافته‌های سنتی و یادگارهایی که با دقت، صبر و عشق ساخته می‌شوند.
+      از رنگ‌های زنده‌ی پارچه‌های دست‌باف تا زیبایی صنایع‌دستی محلی،
+      اینجا می‌توانید با گوشه‌ای از هنر و فرهنگ ایران آشنا شوید.
+    </p>
+
+    <div class="intro-actions">
+      <button class="btn btn-gold" data-page="shop">
+        دیدن فروشگاه <span aria-hidden="true">←</span>
+      </button>
+      <button class="btn btn-outline" data-page="contact">
+        ارتباط با وصال <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+
+    <!-- فقط عکس‌ها در این بخش‌اند؛ متن اصلی و دکمه‌ها بیرون عکس هستند -->
+    <div class="carousel-shell" aria-label="نمایش تصاویر هنرهای سنتی">
+
+      <div class="carousel-visual" id="carouselVisual">
+
+        <div class="carousel-slide active">
+          <img
+            src="https://irangashttour.com/wp-content/uploads/2021/08/Rooyin.jpg"
+            alt="هنرمند در حال بافت پارچه با دستگاه سنتی در روستای رویین"
+            fetchpriority="high"
+            onerror="this.onerror=null;this.src='https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg';">
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg"
+            alt="چادرشب‌بافی سنتی و پارچه‌های رنگارنگ ایرانی"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://irangashttour.com/wp-content/uploads/2021/08/Rooyin.jpg';">
+        </div>
+
+        <div class="carousel-slide">
+          <img
+            src="https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg"
+            alt="حوله‌های دست‌باف با نقش‌ها و رنگ‌های سنتی"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg';">
+        </div>
+
+      </div>
+
+      <div class="carousel-footer">
+
+        <div class="carousel-caption">
+          <strong id="carouselTitle">هنر دست؛ میراث زنده‌ی ایران</strong>
+          <span id="carouselDescription">هر نقش و هر تار، بخشی از یک داستان قدیمی است.</span>
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-dots" id="carouselDots" aria-label="انتخاب تصویر">
+            <button class="carousel-dot active" aria-label="تصویر اول" onclick="goToSlide(0)"></button>
+            <button class="carousel-dot" aria-label="تصویر دوم" onclick="goToSlide(1)"></button>
+            <button class="carousel-dot" aria-label="تصویر سوم" onclick="goToSlide(2)"></button>
+          </div>
+          <button class="carousel-arrow" type="button" onclick="changeSlide(-1)" aria-label="تصویر قبلی">→</button>
+          <button class="carousel-arrow" type="button" onclick="changeSlide(1)" aria-label="تصویر بعدی">←</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="trust-strip">
+
+      <div class="trust-card">
+        <span class="trust-icon" aria-hidden="true">✿</span>
+        <div>
+          <strong>هنر دست هنرمندان</strong>
+          <small>با الهام از فرهنگ بومی</small>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-icon" aria-hidden="true">❖</span>
+        <div>
+          <strong>تنوع دست‌بافته‌ها</strong>
+          <small>پارچه، چادرشب، حوله و بیشتر</small>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-icon" aria-hidden="true">◇</span>
+        <div>
+          <strong>ارتباط مستقیم</strong>
+          <small>پاسخ‌گویی از طریق راه‌های تماس</small>
+        </div>
+      </div>
+
+      <div class="trust-card">
+        <span class="trust-icon" aria-hidden="true">✦</span>
+        <div>
+          <strong>سفارش آسان</strong>
+          <small>انتخاب محصول و ارسال پیام</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="pattern-divider" aria-hidden="true"></div>
+
+  <!-- دسته‌های منتخب -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <div>
+          <div class="title-decoration">گوشه‌ای از هنر ایرانی</div>
+          <h2 class="section-title">دنیای رنگ و نقش وصال</h2>
+          <p class="section-subtitle">
+            از دست‌بافته‌های کاربردی تا هدیه‌های الهام‌گرفته از فرهنگ ایران.
+          </p>
+        </div>
+      </div>
+
+      <div class="featured-grid">
+
+        <article class="featured-card">
+          <span class="symbol" aria-hidden="true">▤</span>
+          <h3>چادرشب و پارچه‌بافی</h3>
+          <p>نقش‌های هندسی و رنگ‌های زنده‌ی دست‌بافته‌های سنتی.</p>
+          <a href="#shop" class="text-link" data-page="shop">دیدن محصولات ←</a>
+        </article>
+
+        <article class="featured-card">
+          <span class="symbol" aria-hidden="true">✿</span>
+          <h3>حوله و دست‌بافته</h3>
+          <p>محصولات پارچه‌ای متنوع برای استفاده‌ی روزمره و هدیه.</p>
+          <a href="#shop" class="text-link" data-page="shop">دیدن محصولات ←</a>
+        </article>
+
+        <article class="featured-card">
+          <span class="symbol" aria-hidden="true">❋</span>
+          <h3>رومیزی و لوازم خانه</h3>
+          <p>بافت و رنگی که به فضای خانه شخصیت می‌بخشد.</p>
+          <a href="#shop" class="text-link" data-page="shop">دیدن محصولات ←</a>
+        </article>
+
+        <article class="featured-card">
+          <span class="symbol" aria-hidden="true">❖</span>
+          <h3>هدیه‌های دست‌ساز</h3>
+          <p>یادگاری‌های الهام‌گرفته از فرهنگ و هنر بومی.</p>
+          <a href="#shop" class="text-link" data-page="shop">دیدن محصولات ←</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- داستان وصال -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+
+      <div class="story-panel">
+
+        <div class="story-copy">
+          <div class="title-decoration">از خراسان شمالی</div>
+
+          <h2>
+            داستان وصال؛
+            <br>
+            <span class="turquoise">پیوند هنر و زندگی</span>
+          </h2>
+
+          <p>
+            روستای رویین در شهرستان اسفراین، یکی از شناخته‌شده‌ترین
+            مراکز نساجی سنتی ایران است. بافت پارچه، چادرشب، حوله و
+            دستمال در این منطقه، بخشی از مهارت‌ها و فرهنگ محلی به‌شمار می‌رود.
+          </p>
+
+          <p>
+            وصال می‌خواهد راهی ساده برای آشنایی با این هنرها و انتخاب
+            محصولات صنایع‌دستی فراهم کند؛ تا پشت هر دست‌بافته، داستان
+            هنرمند و ارزش کار دست فراموش نشود.
+          </p>
+
+          <button class="btn" data-page="contact">آشنایی و ارتباط با ما ←</button>
+        </div>
+
+        <div class="story-art">
+          <img
+            src="https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg"
+            alt="بافت سنتی پارچه با دستگاه دست‌باف"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://irangashttour.com/wp-content/uploads/2021/08/Rooyin.jpg';">
+
+          <div class="story-art-label">
+            هنر نساجی سنتی؛ پیوند تجربه‌ی نسل‌ها با زندگی امروز
+          </div>
+        </div>
+
+      </div>
+
+      <!-- نشان افتخار بر اساس اطلاع‌رسانی منتشرشده -->
+      <div class="honour-section">
+
+        <div class="honour-medal" aria-label="نشان افتخار وصال"></div>
+
+        <div class="honour-copy">
+          <h3>افتخار به تلاش و کارآفرینی بومی</h3>
+
+          <p>
+            در اطلاع‌رسانی منتشرشده از بوم‌گردی وصال، از
+            <strong>آقای قربان وصالی و سرکار خانم هاجر بزرگی</strong>
+            به‌عنوان «زوج موفق کارآفرین در زمینه صنایع‌دستی و گردشگری
+            خراسان شمالی» یاد شده است.
+            این بخش به پاس تلاش در مسیر معرفی هنرهای محلی و کارآفرینی
+            روستایی تقدیم شده است.
+          </p>
+
+          <span class="honour-date">
+            ✦ تاریخ مراسم تقدیر: ۲۸ بهمن ۱۳۹۷
+          </span>
+
+          <div style="margin-top:13px">
+            <a class="btn btn-outline btn-small"
+               href="https://www.instagram.com/p/BuAwxzYgW8v/"
+               target="_blank" rel="noopener noreferrer">
+              مشاهده‌ی اطلاع‌رسانی
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="contact-bottom">
+        <div>
+          <h3>برای انتخاب محصول یا ثبت سفارش آماده‌ای؟</h3>
+          <p>محصولات را ببین و برای موجودی، قیمت و هماهنگی سفارش با وصال تماس بگیر.</p>
+        </div>
+        <button class="btn btn-gold" data-page="shop">رفتن به فروشگاه ←</button>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- ==========================================================
+     صفحه دوم: فروشگاه
+     ========================================================== -->
+<section class="page-view" id="page-shop" hidden>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="shop-banner">
+        <div class="title-decoration" style="color:#f1d49a">فروشگاه اینترنتی وصال</div>
+        <h1>هنر ایرانی را انتخاب کن</h1>
+        <p>
+          دست‌بافته‌های سنتی، چادرشب، حوله، رومیزی، پارچه‌های نخی،
+          لوازم پارچه‌ای و نمونه‌های متنوع صنایع‌دستی.
+          برای خرید، محصولات مورد نظرت را انتخاب کن و سفارش را برای
+          بررسی نهایی به واتساپ فروشگاه بفرست.
+        </p>
+      </div>
+
+      <div class="shop-toolbar">
+
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput"
+                 type="search"
+                 placeholder="جست‌وجوی نام محصول یا دسته‌بندی..."
+                 autocomplete="off"
+                 aria-label="جست‌وجوی محصولات">
+        </label>
+
+        <select id="sortSelect" class="sort-select" aria-label="مرتب‌سازی محصولات">
+          <option value="featured">چیدمان پیشنهادی</option>
+          <option value="low">ارزان‌ترین</option>
+          <option value="high">گران‌ترین</option>
+          <option value="name">مرتب‌سازی نام</option>
+        </select>
+
+      </div>
+
+      <div class="category-filters" id="categoryFilters" aria-label="دسته‌بندی محصولات">
+        <!-- فیلترها با جاوااسکریپت ساخته می‌شوند -->
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2 class="section-title" style="font-size:25px;margin:0">
+            مجموعه‌ی وصال
+          </h2>
+          <p class="section-subtitle">هر محصول را بازبینی کن؛ برای قیمت‌های استعلامی، فروشگاه پس از دریافت سفارش هماهنگ می‌کند.</p>
+        </div>
+
+        <span class="product-count" id="productCount">۰ محصول</span>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- کارت‌های محصولات از آرایه PRODUCTS ساخته می‌شوند -->
+      </div>
+
+      <div class="contact-bottom" style="margin-top:30px">
+        <div>
+          <h3>قیمت یا مشخصات محصول را می‌خواهی؟</h3>
+          <p>برای استعلام موجودی، رنگ، ابعاد، هزینه ارسال و قیمت نهایی با وصال در ارتباط باش.</p>
+        </div>
+        <button class="btn btn-gold" data-page="contact">اطلاعات تماس ←</button>
+      </div>
+
+    </div>
+  </section>
+</section>
+
+<!-- ==========================================================
+     صفحه سوم: ارتباط با ما
+     ========================================================== -->
+<section class="page-view" id="page-contact" hidden>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="contact-banner">
+        <div class="title-decoration" style="color:#f1d49a">همیشه خوشحالیم صدایت را بشنویم</div>
+        <h1>ارتباط با وصال</h1>
+        <p>
+          برای پرسش درباره‌ی محصولات، استعلام قیمت و موجودی،
+          هماهنگی سفارش یا آشنایی با هنرهای محلی رویین،
+          از یکی از راه‌های ارتباطی زیر استفاده کن.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+
+        <div class="contact-panel">
+          <h2>تماس مستقیم</h2>
+          <p>شماره‌ها را لمس کن تا با فروشگاه ارتباط بگیری.</p>
+
+          <div class="contact-methods">
+
+            <a class="contact-item" href="tel:+989157879170">
+              <span class="contact-icon" aria-hidden="true">☎</span>
+              <span class="contact-info">
+                <strong>شماره تماس اول</strong>
+                <span>+98 915 787 9170</span>
+              </span>
+              <span class="contact-action">تماس ←</span>
+            </a>
+
+            <a class="contact-item" href="tel:+989156419163">
+              <span class="contact-icon" aria-hidden="true">☎</span>
+              <span class="contact-info">
+                <strong>شماره تماس دوم</strong>
+                <span>+98 915 641 9163</span>
+              </span>
+              <span class="contact-action">تماس ←</span>
+            </a>
+
+            <a class="contact-item"
+               href="https://wa.me/989157879170"
+               target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true">◉</span>
+              <span class="contact-info">
+                <strong>واتساپ فروشگاه</strong>
+                <span>+98 915 787 9170</span>
+              </span>
+              <span class="contact-action">پیام ↗</span>
+            </a>
+
+            <a class="contact-item"
+               href="https://wa.me/989156419163"
+               target="_blank" rel="noopener noreferrer">
+              <span class="contact-icon" aria-hidden="true">◉</span>
+              <span class="contact-info">
+                <strong>واتساپ شماره دوم</strong>
+                <span>+98 915 641 9163</span>
+              </span>
+              <span class="contact-action">پیام ↗</span>
+            </a>
+
+          </div>
+
+          <div class="location-note">
+            <strong>نشانی مجموعه</strong>
+            <br>
+            روستای رویین، شهرستان اسفراین، استان خراسان شمالی
+            <br>
+            <span class="muted">
+              برای مراجعه‌ی حضوری، لطفاً پیش از حرکت هماهنگی کنید.
+            </span>
+          </div>
+
+        </div>
+
+        <div class="contact-panel">
+          <h2>ما را در شبکه‌های اجتماعی پیدا کن</h2>
+          <p>برای دیدن محصولات، اخبار و ارتباط با مجموعه، وارد صفحه‌های زیر شو.</p>
+
+          <div class="social-grid">
+
+            <a class="social-card"
+               href="https://www.instagram.com/vesalbozorgi?rpxt=MWRrdHBsOGRjOGo3eA=="
+               target="_blank" rel="noopener noreferrer">
+              <span class="social-symbol" aria-hidden="true">◎</span>
+              <strong>اینستاگرام وصال</strong>
+              <small>@vesalbozorgi</small>
+            </a>
+
+            <a class="social-card"
+               href="https://rubika.ir/Vesalbozorgi"
+               target="_blank" rel="noopener noreferrer">
+              <span class="social-symbol" aria-hidden="true">◈</span>
+              <strong>روبیکا</strong>
+              <small>@Vesalbozorgi</small>
+            </a>
+
+            <a class="social-card"
+               href="https://eitaa.com/Nasajiroin"
+               target="_blank" rel="noopener noreferrer">
+              <span class="social-symbol" aria-hidden="true">✉</span>
+              <strong>ایتا</strong>
+              <small>@Nasajiroin</small>
+            </a>
+
+            <a class="social-card"
+               href="https://t.me/vesalroeincooperative"
+               target="_blank" rel="noopener noreferrer">
+              <span class="social-symbol" aria-hidden="true">➤</span>
+              <strong>تلگرام</strong>
+              <small>@vesalroeincooperative</small>
+            </a>
+
+          </div>
+
+          <div class="location-note">
+            <strong>سفارش اینترنتی چگونه است؟</strong>
+            <br>
+            محصول را به سبد خرید اضافه کن. سپس اطلاعات سفارش را وارد کن
+            تا متن پیام در واتساپ آماده شود. ثبت نهایی سفارش، موجودی،
+            هزینه ارسال و روش پرداخت باید با فروشگاه تأیید شود.
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="contact-bottom">
+        <div>
+          <h3>وصال؛ پیوندی میان هنر و زندگی</h3>
+          <p>از دیدنت در دنیای صنایع‌دستی ایران خوشحالیم.</p>
+        </div>
+        <button class="btn btn-gold" data-page="shop">مشاهده محصولات ←</button>
+      </div>
+
+    </div>
+  </section>
+
+</section>
+</main>
+
+<!-- ====================== فوتر مشترک ====================== -->
+<footer class="site-footer">
+  <div class="footer-pattern" aria-hidden="true"></div>
+
+  <div class="container footer-main">
+    <div class="footer-grid">
+
+      <div>
+        <a class="brand footer-brand" href="#home" data-page="home">
+          <span class="brand-emblem" aria-hidden="true">✿</span>
+          <span>
+            <span class="brand-name">وصال</span>
+            <span class="brand-subtitle">خانه‌ی هنر و اصالت ایرانی</span>
+          </span>
+        </a>
+
+        <p class="footer-about">
+          وصال؛ ویترینی برای دست‌بافته‌ها و هنرهای سنتی ایران،
+          با نگاهی به میراث نساجی روستای رویین در خراسان شمالی.
+          هر محصول می‌تواند داستانی از فرهنگ، رنگ و هنر دست با خود داشته باشد.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>دسترسی سریع</h3>
+        <button class="footer-link" data-page="home" style="border:0;background:none;font-family:inherit;text-align:right;cursor:pointer">خانه</button>
+        <button class="footer-link" data-page="shop" style="border:0;background:none;font-family:inherit;text-align:right;cursor:pointer">فروشگاه</button>
+        <button class="footer-link" data-page="contact" style="border:0;background:none;font-family:inherit;text-align:right;cursor:pointer">ارتباط با ما</button>
+      </div>
+
+      <div class="footer-column">
+        <h3>راه‌های ارتباطی</h3>
+        <a class="footer-contact-line" href="tel:+989157879170">+98 915 787 9170</a>
+        <a class="footer-contact-line" href="tel:+989156419163">+98 915 641 9163</a>
+        <a class="footer-link" href="https://www.instagram.com/vesalbozorgi?rpxt=MWRrdHBsOGRjOGo3eA==" target="_blank" rel="noopener noreferrer">اینستاگرام ↗</a>
+        <a class="footer-link" href="https://eitaa.com/Nasajiroin" target="_blank" rel="noopener noreferrer">ایتا ↗</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> فروشگاه صنایع‌دستی وصال</span>
+      <span>ساخته‌شده با احترام به هنر و فرهنگ ایران ✦</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== سبد خرید ====================== -->
+<div class="overlay" id="overlay" onclick="closeCart()" aria-hidden="true"></div>
+
+<aside class="cart-drawer"
+       id="cartDrawer"
+       aria-label="سبد خرید"
+       aria-hidden="true">
+
+  <div class="cart-header">
+    <h2>سبد خرید شما</h2>
+    <button class="close-button" onclick="closeCart()" aria-label="بستن سبد خرید">×</button>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-summary">
+    <div class="total-line">
+      <span>جمع کل اقلام دارای قیمت</span>
+      <strong id="cartTotal">۰ تومان</strong>
+    </div>
+    <button class="btn btn-gold" onclick="openCheckout()">
+      ادامه و ثبت سفارش در واتساپ ↗
+    </button>
+    <p class="cart-note">
+      قیمت‌های واردنشده باید با فروشگاه استعلام شوند.
+    </p>
+  </div>
+
+</aside>
+
+<!-- ====================== فرم اطلاعات سفارش ====================== -->
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+
+  <div class="modal-card">
+
+    <div class="modal-heading">
+      <h2 id="checkoutTitle">اطلاعات سفارش</h2>
+      <button class="close-button" onclick="closeCheckout()" aria-label="بستن فرم">×</button>
+    </div>
+
+    <p>
+      اطلاعات زیر فقط در متن پیام سفارش قرار می‌گیرد.
+      با ادامه، واتساپ باز می‌شود و خودت پیام را ارسال می‌کنی.
+    </p>
+
+    <form id="checkoutForm">
+
+      <div class="form-group">
+        <label for="customerName">نام و نام خانوادگی *</label>
+        <input id="customerName" name="customerName" required
+               autocomplete="name" placeholder="نام شما">
+      </div>
+
+      <div class="form-group">
+        <label for="customerPhone">شماره تماس *</label>
+        <input id="customerPhone" name="customerPhone" required
+               autocomplete="tel" inputmode="tel" placeholder="شماره تماس شما">
+      </div>
+
+      <div class="form-group">
+        <label for="customerAddress">شهر و نشانی (اختیاری)</label>
+        <textarea id="customerAddress" name="customerAddress"
+                  autocomplete="street-address" placeholder="نشانی تحویل یا توضیحات ارسال"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="customerNote">توضیحات سفارش (اختیاری)</label>
+        <textarea id="customerNote" name="customerNote"
+                  placeholder="مثلاً رنگ، ابعاد یا تعداد موردنظر"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-gold">آماده‌سازی پیام واتساپ ↗</button>
+        <button type="button" class="btn btn-outline" onclick="closeCheckout()">بازگشت</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =============================================================
+   تنظیمات فروشگاه
+   این فایل به سرور پایتون نیاز ندارد.
+   ============================================================= */
+
+/*
+  شماره پیش‌فرض دریافت سفارش در واتساپ.
+  در صورت نیاز، آن را به شماره واقعی دریافت سفارش تغییر بده.
+  عدد را بدون +، فاصله و خط تیره بنویس.
+*/
+const WHATSAPP_ORDER_NUMBER = "989157879170";
+
+
+/* =============================================================
+   فهرست محصولات
+   -------------------------------------------------------------
+   برای افزودن محصول، یک شیء جدید به آرایه اضافه کن.
+
+   image:
+   مسیر عکس محصول در مخزن گیت‌هاب؛ مثال:
+   "images/product-01.jpg"
+
+   عکس‌ها را خودت در پوشه images بارگذاری کن.
+   مسیر و نام فایل باید دقیقاً با مقدار image برابر باشد.
+
+   price:
+   مبلغ به تومان است. تا وقتی قیمت را نمی‌دانی، صفر بگذار.
+   قیمت صفر در سایت به‌صورت «استعلام قیمت» نمایش داده می‌شود.
+
+   دقت کن id هر محصول یکتا باشد.
+   ============================================================= */
+
+const PRODUCTS = [
+
+  {
+    id: 1,
+    name: "چادرشب دست‌باف",
+    category: "چادرشب و پارچه",
+    price: 0,
+    description: "نمونه‌ای از دست‌بافته‌های سنتی با نقش‌های هندسی و رنگ‌های زنده.",
+    image: "images/product-01.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "هنر سنتی"
+  },
+
+  {
+    id: 2,
+    name: "حوله دست‌باف",
+    category: "حوله و دست‌بافته",
+    price: 0,
+    description: "محصول پارچه‌ای برای استفاده روزمره؛ مشخصات نهایی را وارد کن.",
+    image: "images/product-02.jpg",
+    demoImage: "https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg",
+    tag: "دست‌بافته"
+  },
+
+  {
+    id: 3,
+    name: "رومیزی سنتی",
+    category: "رومیزی و خانه",
+    price: 0,
+    description: "رومیزی پارچه‌باف برای چیدمان و زیبایی فضای خانه.",
+    image: "images/product-03.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "خانه ایرانی"
+  },
+
+  {
+    id: 4,
+    name: "دستمال نخی",
+    category: "حوله و دست‌بافته",
+    price: 0,
+    description: "نمونه دست‌بافته پارچه‌ای؛ رنگ، ابعاد و جنس را در توضیحات تغییر بده.",
+    image: "images/product-04.jpg",
+    demoImage: "https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg",
+    tag: "کاربردی"
+  },
+
+  {
+    id: 5,
+    name: "پارچه سنتی",
+    category: "چادرشب و پارچه",
+    price: 0,
+    description: "پارچه‌ای برای استفاده در دوخت، پوشاک یا کارهای پارچه‌ای.",
+    image: "images/product-05.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "انتخاب وصال"
+  },
+
+  {
+    id: 6,
+    name: "ست دست‌بافته هدیه",
+    category: "هدیه و صنایع‌دستی",
+    price: 0,
+    description: "یک مجموعه هدیه با محصولات پارچه‌ای؛ محتویات آن را مطابق محصول واقعی تغییر بده.",
+    image: "images/product-06.jpg",
+    demoImage: "https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg",
+    tag: "هدیه"
+  },
+
+  {
+    id: 7,
+    name: "کیف پارچه‌ای",
+    category: "هدیه و صنایع‌دستی",
+    price: 0,
+    description: "نمونه‌ای برای معرفی محصولات پارچه‌ای و دست‌ساز مجموعه.",
+    image: "images/product-07.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "دست‌ساز"
+  },
+
+  {
+    id: 8,
+    name: "پارچه چهارخانه",
+    category: "چادرشب و پارچه",
+    price: 0,
+    description: "پارچه طرح چهارخانه؛ تصویر، قیمت و مشخصات واقعی را جایگزین کن.",
+    image: "images/product-08.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "نقش ایرانی"
+  },
+
+  {
+    id: 9,
+    name: "محصول پارچه‌ای ویژه",
+    category: "رومیزی و خانه",
+    price: 0,
+    description: "این کارت را برای محصول واقعی دیگری که در فروشگاه موجود است ویرایش کن.",
+    image: "images/product-09.jpg",
+    demoImage: "https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg",
+    tag: "محصول منتخب"
+  },
+
+  {
+    id: 10,
+    name: "صنایع‌دستی منتخب",
+    category: "هدیه و صنایع‌دستی",
+    price: 0,
+    description: "برای هر محصول تازه، نام، توضیحات، قیمت و عکس اختصاصی وارد کن.",
+    image: "images/product-10.jpg",
+    demoImage: "https://api.tasteiran.net/Files/chadorshab-ghasemabad-loom-77f69f.jpg",
+    tag: "منتخب وصال"
+  }
+
+];
+
+
+/* =============================================================
+   ابزارهای عمومی
+   ============================================================= */
+
+const $ = (selector, root = document) => root.querySelector(selector);
+const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
+const faNumber = value => new Intl.NumberFormat("fa-IR").format(value);
+
+function toman(value) {
+  return faNumber(value) + " تومان";
+}
+
+function showToast(message) {
+  const box = $("#toast");
+  box.textContent = message;
+  box.classList.add("show");
+
+  clearTimeout(window.__vesalToastTimer);
+
+  window.__vesalToastTimer = setTimeout(() => {
+    box.classList.remove("show");
+  }, 2400);
+}
+
+
+/* =============================================================
+   سه صفحه در همان فایل: خانه، فروشگاه، ارتباط با ما
+   ============================================================= */
+
+function showPage(pageName) {
+  const validPages = ["home", "shop", "contact"];
+
+  if (!validPages.includes(pageName)) {
+    pageName = "home";
+  }
+
+  $$(".page-view").forEach(section => {
+    section.hidden = section.id !== "page-" + pageName;
+  });
+
+  $$(".nav-button").forEach(button => {
+    if (button.dataset.page === pageName) {
+      button.setAttribute("aria-current", "page");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  });
+
+  $("#mainNav").classList.remove("open");
+  $("#menuButton").setAttribute("aria-expanded", "false");
+
+  history.replaceState(null, "", "#" + pageName);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+$$("[data-page]").forEach(element => {
+  element.addEventListener("click", event => {
+    event.preventDefault();
+    showPage(element.dataset.page);
+  });
+});
+
+function toggleMenu() {
+  const menu = $("#mainNav");
+  const opened = menu.classList.toggle("open");
+  $("#menuButton").setAttribute("aria-expanded", String(opened));
+}
+
+
+/* =============================================================
+   اسلایدر تصاویر
+   ============================================================= */
+
+const SLIDE_TEXTS = [
+  {
+    title: "هنر دست؛ میراث زنده‌ی ایران",
+    description: "هر نقش و هر تار، بخشی از یک داستان قدیمی است."
+  },
+  {
+    title: "چادرشب‌بافی و رنگ‌های اصیل",
+    description: "نقوش سنتی و دست‌بافته‌هایی الهام‌گرفته از فرهنگ ایران."
+  },
+  {
+    title: "پارچه و حوله‌های دست‌باف",
+    description: "محصولات پارچه‌ای متنوع در جهان نساجی سنتی."
+  }
+];
+
+let currentSlide = 0;
+let slideTimer = null;
+
+function goToSlide(index) {
+  const slides = $$(".carousel-slide");
+  if (!slides.length) return;
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  $$(".carousel-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+
+  $("#carouselTitle").textContent = SLIDE_TEXTS[currentSlide].title;
+  $("#carouselDescription").textContent = SLIDE_TEXTS[currentSlide].description;
+
+  startSlideTimer();
+}
+
+function changeSlide(delta) {
+  goToSlide(currentSlide + delta);
+}
+
+function startSlideTimer() {
+  if (slideTimer) clearInterval(slideTimer);
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  slideTimer = setInterval(() => {
+    changeSlide(1);
+  }, 5500);
+}
+
+startSlideTimer();
+
+
+/* =============================================================
+   فروشگاه و دسته‌بندی
+   ============================================================= */
+
+let activeCategory = "همه";
+
+const cart = loadCart();
+
+function loadCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("vesalShopCart") || "[]");
+    if (!Array.isArray(saved)) return [];
+
+    return saved.filter(item => {
+      return PRODUCTS.some(product => product.id === item.id) &&
+             Number.isInteger(item.qty) &&
+             item.qty > 0;
+    });
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveCart() {
+  try {
+    localStorage.setItem("vesalShopCart", JSON.stringify(cart));
+  } catch (error) {
+    // اگر فضای ذخیره‌سازی مرورگر در دسترس نبود، سبد همین نشست کار می‌کند.
+  }
+}
+
+function renderCategoryFilters() {
+  const categories = [
+    "همه",
+    ...new Set(PRODUCTS.map(product => product.category))
+  ];
+
+  $("#categoryFilters").innerHTML = categories.map(category => `
+    <button
+      type="button"
+      class="filter-button ${category === activeCategory ? "active" : ""}"
+      data-category="${category}">
+      ${category === "همه" ? "همه محصولات" : category}
+    </button>
+  `).join("");
+
+  $$(".filter-button", $("#categoryFilters")).forEach(button => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      renderCategoryFilters();
+      renderProducts();
+    });
+  });
+}
+
+function getVisibleProducts() {
+  const query = ($("#searchInput").value || "").trim().toLocaleLowerCase("fa");
+  let list = PRODUCTS.filter(product => {
+    const categoryMatches =
+      activeCategory === "همه" || product.category === activeCategory;
+
+    const text = [
+      product.name,
+      product.category,
+      product.description,
+      product.tag
+    ].join(" ").toLocaleLowerCase("fa");
+
+    return categoryMatches && text.includes(query);
+  });
+
+  const sort = $("#sortSelect").value;
+
+  if (sort === "low") {
+    list.sort((a, b) => a.price - b.price);
+  } else if (sort === "high") {
+    list.sort((a, b) => b.price - a.price);
+  } else if (sort === "name") {
+    list.sort((a, b) => a.name.localeCompare(b.name, "fa"));
+  }
+
+  return list;
+}
+
+function safeImageAttribute(value) {
+  // جلوگیری از شکستن صفت HTML به‌واسطه‌ی علامت نقل‌قول.
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function renderProducts() {
+  const list = getVisibleProducts();
+
+  $("#productCount").textContent =
+    faNumber(list.length) + " محصول";
+
+  const grid = $("#productGrid");
+
+  if (!list.length) {
+    grid.innerHTML = `
+      <div class="empty-products">
+        محصولی با این جست‌وجو پیدا نشد.
+        <br>
+        عبارت دیگری بنویس یا دسته‌بندی را تغییر بده.
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = list.map(product => {
+    const imagePath = safeImageAttribute(product.image);
+    const fallbackImage = safeImageAttribute(product.demoImage);
+    const priceText = product.price > 0
+      ? toman(product.price)
+      : "استعلام قیمت";
+
+    return `
+      <article class="product-card">
+
+        <div class="product-image">
+          <img
+            src="${imagePath}"
+            alt="${safeImageAttribute(product.name)}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='${fallbackImage}'">
+
+          <span class="product-tag">
+            ${product.tag}
+          </span>
+        </div>
+
+        <div class="product-content">
+
+          <span class="product-category">
+            ${product.category}
+          </span>
+
+          <h3 class="product-title">
+            ${product.name}
+          </h3>
+
+          <p class="product-description">
+            ${product.description}
+          </p>
+
+          <div class="product-meta">
+            <span class="product-price">
+              ${priceText}
+              ${product.price > 0 ? "<small>قیمت درج‌شده در سایت</small>" : "<small>تماس برای قیمت نهایی</small>"}
+            </span>
+          </div>
+
+          <button
+            class="product-add"
+            type="button"
+            onclick="addToCart(${product.id})">
+            ＋ افزودن به سبد خرید
+          </button>
+
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+$("#searchInput").addEventListener("input", renderProducts);
+$("#sortSelect").addEventListener("change", renderProducts);
+
+
+/* =============================================================
+   سبد خرید
+   ============================================================= */
+
+function addToCart(productId) {
+  const product = PRODUCTS.find(item => item.id === productId);
+  if (!product) return;
+
+  const existing = cart.find(item => item.id === productId);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ id: productId, qty: 1 });
+  }
+
+  saveCart();
+  updateCart();
+  showToast("محصول به سبد خرید اضافه شد.");
+}
+
+function changeQuantity(productId, amount) {
+  const item = cart.find(entry => entry.id === productId);
+  if (!item) return;
+
+  item.qty += amount;
+
+  if (item.qty <= 0) {
+    const index = cart.findIndex(entry => entry.id === productId);
+    if (index >= 0) cart.splice(index, 1);
+  }
+
+  saveCart();
+  updateCart();
+}
+
+function removeCartItem(productId) {
+  const index = cart.findIndex(entry => entry.id === productId);
+  if (index >= 0) cart.splice(index, 1);
+
+  saveCart();
+  updateCart();
+}
+
+function cartQuantity() {
+  return cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+function cartTotal() {
+  return cart.reduce((sum, item) => {
+    const product = PRODUCTS.find(entry => entry.id === item.id);
+    return sum + (product ? product.price * item.qty : 0);
+  }, 0);
+}
+
+function updateCart() {
+  $("#cartCount").textContent = faNumber(cartQuantity());
+
+  const box = $("#cartItems");
+
+  if (!cart.length) {
+    box.innerHTML = `
+      <div class="empty-products">
+        سبد خریدت هنوز خالی است.
+        <br>
+        به فروشگاه برو و محصول موردنظرت را انتخاب کن.
+      </div>
+    `;
+  } else {
+    box.innerHTML = cart.map(item => {
+      const product = PRODUCTS.find(entry => entry.id === item.id);
+      if (!product) return "";
+
+      const priceText = product.price > 0
+        ? toman(product.price * item.qty)
+        : "استعلام قیمت";
+
+      return `
+        <div class="cart-item">
+
+          <img
+            src="${safeImageAttribute(product.image)}"
+            alt="${safeImageAttribute(product.name)}"
+            onerror="this.onerror=null;this.src='${safeImageAttribute(product.demoImage)}'">
+
+          <div>
+            <p class="cart-item-name">${product.name}</p>
+            <span class="cart-item-price">${priceText}</span>
+
+            <div class="qty-controls">
+              <button
+                type="button"
+                onclick="changeQuantity(${product.id}, -1)"
+                aria-label="کم کردن تعداد">−</button>
+
+              <span>${faNumber(item.qty)}</span>
+
+              <button
+                type="button"
+                onclick="changeQuantity(${product.id}, 1)"
+                aria-label="زیاد کردن تعداد">+</button>
+            </div>
+          </div>
+
+          <button
+            class="remove-item"
+            type="button"
+            onclick="removeCartItem(${product.id})">
+            حذف
+          </button>
+
+        </div>
+      `;
+    }).join("");
+  }
+
+  const hasUnpricedProducts = cart.some(item => {
+    const product = PRODUCTS.find(entry => entry.id === item.id);
+    return product && product.price <= 0;
+  });
+
+  let totalText = cart.length ? toman(cartTotal()) : toman(0);
+
+  if (hasUnpricedProducts) {
+    totalText = cartTotal() > 0
+      ? toman(cartTotal()) + " + استعلام قیمت"
+      : "استعلام قیمت";
+  }
+
+  $("#cartTotal").textContent = totalText;
+}
+
+function openCart() {
+  $("#cartDrawer").classList.add("open");
+  $("#cartDrawer").setAttribute("aria-hidden", "false");
+  $("#overlay").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCart() {
+  $("#cartDrawer").classList.remove("open");
+  $("#cartDrawer").setAttribute("aria-hidden", "true");
+  $("#overlay").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+
+/* =============================================================
+   فرم سفارش و ارسال پیام به واتساپ
+   ============================================================= */
+
+function openCheckout() {
+  if (!cart.length) {
+    showToast("سبد خرید خالی است.");
+    return;
+  }
+
+  closeCart();
+  $("#checkoutModal").classList.add("show");
+  document.body.style.overflow = "hidden";
+
+  setTimeout(() => {
+    $("#customerName").focus();
+  }, 100);
+}
+
+function closeCheckout() {
+  $("#checkoutModal").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+function buildOrderMessage(customer) {
+  const lines = cart.map(item => {
+    const product = PRODUCTS.find(entry => entry.id === item.id);
+    if (!product) return "";
+
+    const linePrice = product.price > 0
+      ? toman(product.price * item.qty)
+      : "نیازمند استعلام";
+
+    return `• ${product.name}\n  تعداد: ${item.qty}\n  مبلغ: ${linePrice}`;
+  }).filter(Boolean);
+
+  const unpriced = cart.some(item => {
+    const product = PRODUCTS.find(entry => entry.id === item.id);
+    return product && product.price <= 0;
+  });
+
+  return [
+    "سلام فروشگاه صنایع‌دستی وصال، برای ثبت سفارش راهنمایی می‌خواهم.",
+    "",
+    `نام: ${customer.name}`,
+    `شماره تماس: ${customer.phone}`,
+    `نشانی: ${customer.address || "بعداً هماهنگ می‌کنم"}`,
+    "",
+    "محصولات انتخاب‌شده:",
+    ...lines,
+    "",
+    `جمع قیمت‌های درج‌شده: ${toman(cartTotal())}`,
+    `محصول نیازمند استعلام قیمت: ${unpriced ? "بله" : "خیر"}`,
+    "",
+    `توضیحات: ${customer.note || "ندارد"}`,
+    "",
+    "لطفاً موجودی، قیمت نهایی، هزینه ارسال و روش پرداخت را تأیید کنید."
+  ].join("\n");
+}
+
+$("#checkoutForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!WHATSAPP_ORDER_NUMBER || WHATSAPP_ORDER_NUMBER.length < 10) {
+    showToast("شماره واتساپ دریافت سفارش را در کد بررسی کن.");
+    return;
+  }
+
+  const customer = {
+    name: $("#customerName").value.trim(),
+    phone: $("#customerPhone").value.trim(),
+    address: $("#customerAddress").value.trim(),
+    note: $("#customerNote").value.trim()
+  };
+
+  if (!customer.name || !customer.phone) {
+    showToast("نام و شماره تماس را وارد کن.");
+    return;
+  }
+
+  const message = buildOrderMessage(customer);
+  const whatsappUrl =
+    "https://wa.me/" +
+    WHATSAPP_ORDER_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+  closeCheckout();
+
+  const newTab = window.open(whatsappUrl, "_blank");
+
+  if (!newTab) {
+    // اگر مرورگر بازشدن پنجره را مسدود کرد، یک لینک مستقیم نشان بده.
+    const link = document.createElement("a");
+    link.href = whatsappUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "برای بازکردن واتساپ اینجا بزن";
+    link.style.cssText =
+      "display:block;padding:15px;margin:10px;color:#102b4e;background:#f1d49a;border-radius:12px;text-align:center;font-weight:bold";
+
+    const modal = $("#checkoutModal");
+    const card = $(".modal-card", modal);
+    card.appendChild(link);
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+});
+
+
+/* =============================================================
+   کنترل صفحه، کلیدها و شروع برنامه
+   ============================================================= */
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeCart();
+    closeCheckout();
+  }
+});
+
+$("#currentYear").textContent =
+  new Intl.DateTimeFormat("fa-IR", { year: "numeric" }).format(new Date());
+
+renderCategoryFilters();
+renderProducts();
+updateCart();
+
+// اگر آدرس با #shop یا #contact باز شد، همان صفحه را نشان بده.
+const initialPage = window.location.hash.replace("#", "");
+
+if (["home", "shop", "contact"].includes(initialPage)) {
+  showPage(initialPage);
+} else {
+  showPage("home");
+}
+</script>
+
+</body>
+</html>
